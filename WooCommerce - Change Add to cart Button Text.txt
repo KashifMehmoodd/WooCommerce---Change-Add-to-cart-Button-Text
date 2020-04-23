@@ -1,0 +1,23 @@
+"function wc_custom_single_addtocart_text( $text, $product ) {
+         if ( 'pickup-katy-1' === $product->get_slug() ) {
+    switch ( $product->product_type ) {                
+        case 'simple'  : $text = 'Start Takeout Order'; break;
+        default        : $text = 'Add to Cart'; break;
+    }
+         }
+         if ( 'pickup-katy-2' === $product->get_slug() ) {
+    switch ( $product->product_type ) {                
+        case 'simple'  : $text = 'Start Takeout Order'; break;
+        default        : $text = 'Add to Cart'; break;
+    }
+         }
+         if ( 'pickup-brookshire' === $product->get_slug() ) {
+    switch ( $product->product_type ) {                
+        case 'simple'  : $text = 'Start Takeout Order'; break;
+        default        : $text = 'Add to Cart'; break;
+    }
+         }
+
+    return $text;
+}
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'wc_custom_single_addtocart_text', 10, 2 );"
